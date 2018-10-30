@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="CompilerConfiguration">
+    <annotationProcessing>
+      <profile name="Maven default annotation processors profile" enabled="true">
+        <sourceOutputDir name="target/generated-sources/annotations" />
+        <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <module name="maven_dao" />
+        <module name="maven_service" />
+        <module name="maven_web" />
+        <module name="ojdbc_demo" />
+        <module name="schoolflowers" />
+        <module name="ssm_01_library" />
+        <module name="ssm_02_dao" />
+        <module name="ssm_02_domain" />
+        <module name="ssm_02_service" />
+        <module name="ssm_02_util" />
+        <module name="ssm_02_web" />
+        <module name="webmagic_1_demo" />
+      </profile>
+    </annotationProcessing>
+  </component>
+</project>

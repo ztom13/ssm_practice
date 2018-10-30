@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ExternalStorageConfigurationManager" enabled="true" />
+  <component name="FrameworkDetectionExcludesConfiguration">
+    <file type="web" url="file://$PROJECT_DIR$/maven_parent/maven_web" />
+    <file type="web" url="file://$PROJECT_DIR$/ssm_01_library" />
+    <file type="web" url="file://$PROJECT_DIR$/ssm_02_parent/ssm_02_web" />
+    <file type="web" url="file://$PROJECT_DIR$/webmagic_1_demo" />
+  </component>
+  <component name="MavenProjectsManager">
+    <option name="originalFiles">
+      <list>
+        <option value="$PROJECT_DIR$/ssm_01_library/pom.xml" />
+        <option value="$PROJECT_DIR$/ojdbc_demo/pom.xml" />
+        <option value="$PROJECT_DIR$/webmagic_1_demo/pom.xml" />
+        <option value="$PROJECT_DIR$/maven_parent/pom.xml" />
+        <option value="$PROJECT_DIR$/ssm_02_parent/pom.xml" />
+        <option value="$PROJECT_DIR$/schoolflowers/pom.xml" />
+      </list>
+    </option>
+  </component>
+  <component name="ProjectRootManager" version="2" languageLevel="JDK_1_8" project-jdk-name="1.8" project-jdk-type="JavaSDK">
+    <output url="file://$PROJECT_DIR$/out" />
+  </component>
+</project>

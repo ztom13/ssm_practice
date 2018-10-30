@@ -1,0 +1,18 @@
+2018-10-29 09:17:50.049 [main] INFO [org.springframework.context.support.AbstractApplicationContext.prepareRefresh] - Refreshing org.springframework.context.support.ClassPathXmlApplicationContext@79efed2d: startup date [Mon Oct 29 09:17:50 CST 2018]; root of context hierarchy
+2018-10-29 09:17:50.228 [main] INFO [org.springframework.beans.factory.xml.XmlBeanDefinitionReader.loadBeanDefinitions] - Loading XML bean definitions from class path resource [spring/spring-dao.xml]
+2018-10-29 09:17:51.083 [main] INFO [org.springframework.jdbc.datasource.DriverManagerDataSource.setDriverClassName] - Loaded JDBC driver: com.mysql.jdbc.Driver
+2018-10-29 09:17:51.553 [main] DEBUG [org.springframework.jdbc.datasource.DataSourceUtils.doGetConnection] - Fetching JDBC Connection from DataSource
+2018-10-29 09:17:51.554 [main] DEBUG [org.springframework.jdbc.datasource.DriverManagerDataSource.getConnectionFromDriver] - Creating new JDBC DriverManager Connection to [jdbc:mysql://localhost:3306/ssm]
+2018-10-29 09:17:52.196 [main] DEBUG [org.springframework.jdbc.datasource.DataSourceUtils.doReleaseConnection] - Returning JDBC Connection to DataSource
+2018-10-29 09:48:38.874 [main] INFO [org.springframework.context.support.AbstractApplicationContext.prepareRefresh] - Refreshing org.springframework.context.support.ClassPathXmlApplicationContext@48aaecc3: startup date [Mon Oct 29 09:48:38 CST 2018]; root of context hierarchy
+2018-10-29 09:48:38.955 [main] INFO [org.springframework.beans.factory.xml.XmlBeanDefinitionReader.loadBeanDefinitions] - Loading XML bean definitions from class path resource [spring/spring-dao.xml]
+2018-10-29 09:48:39.413 [main] INFO [org.springframework.jdbc.datasource.DriverManagerDataSource.setDriverClassName] - Loaded JDBC driver: com.mysql.jdbc.Driver
+2018-10-29 09:48:39.692 [main] DEBUG [org.springframework.jdbc.datasource.DataSourceUtils.doGetConnection] - Fetching JDBC Connection from DataSource
+2018-10-29 09:48:39.693 [main] DEBUG [org.springframework.jdbc.datasource.DriverManagerDataSource.getConnectionFromDriver] - Creating new JDBC DriverManager Connection to [jdbc:mysql://localhost:3306/ssm]
+2018-10-29 09:48:40.102 [main] DEBUG [org.springframework.jdbc.datasource.DataSourceUtils.doReleaseConnection] - Returning JDBC Connection to DataSource
+2018-10-29 09:50:15.980 [main] INFO [org.springframework.context.support.AbstractApplicationContext.prepareRefresh] - Refreshing org.springframework.context.support.ClassPathXmlApplicationContext@48aaecc3: startup date [Mon Oct 29 09:50:15 CST 2018]; root of context hierarchy
+2018-10-29 09:50:16.047 [main] INFO [org.springframework.beans.factory.xml.XmlBeanDefinitionReader.loadBeanDefinitions] - Loading XML bean definitions from class path resource [spring/spring-dao.xml]
+2018-10-29 09:50:16.481 [main] INFO [org.springframework.jdbc.datasource.DriverManagerDataSource.setDriverClassName] - Loaded JDBC driver: com.mysql.jdbc.Driver
+2018-10-29 09:50:16.715 [main] DEBUG [org.springframework.jdbc.datasource.DataSourceUtils.doGetConnection] - Fetching JDBC Connection from DataSource
+2018-10-29 09:50:16.716 [main] DEBUG [org.springframework.jdbc.datasource.DriverManagerDataSource.getConnectionFromDriver] - Creating new JDBC DriverManager Connection to [jdbc:mysql://localhost:3306/ssm]
+2018-10-29 09:50:17.082 [main] DEBUG [org.springframework.jdbc.datasource.DataSourceUtils.doReleaseConnection] - Returning JDBC Connection to DataSource

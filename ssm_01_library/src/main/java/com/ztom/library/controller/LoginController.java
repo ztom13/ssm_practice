@@ -1,0 +1,31 @@
+package com.ztom.library.controller;
+
+import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
+
+import javax.servlet.http.HttpServletRequest;
+
+/**
+ * author:ztom
+ * date:2018/10/25 23:06
+ */
+@Controller
+@RequestMapping("/store")
+public class LoginController {
+    @RequestMapping(value = "/login", method = RequestMethod.POST)
+    public String login(String stuId, String password, HttpServletRequest request) {
+        String contextPath = request.getContextPath();
+        String scheme = request.getScheme();
+        String name = request.getServerName();
+        int port = request.getServerPort();
+        if ("123".equals(password)) {
+            // 登陆成功
+            request.getSession().setAttribute("stuId", stuId);
+            return "redirect:" + (contextPath + "/books/findBookList");
+        } else {
+            // 登陆失败
+            return "redirect:" + (scheme + "://" + name + ":" + port + contextPath + "/pages/login.jsp");
+        }
+    }
+}
