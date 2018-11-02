@@ -22,10 +22,17 @@ public class LoginController {
         if ("123".equals(password)) {
             // 登陆成功
             request.getSession().setAttribute("stuId", stuId);
-            return "redirect:" + (contextPath + "/books/findBookList");
+            return "redirect:/books/findBookList";
         } else {
             // 登陆失败
             return "redirect:" + (scheme + "://" + name + ":" + port + contextPath + "/pages/login.jsp");
         }
     }
+    /**
+     * redirect: 后面跟请求路径时,针对前面加/和不加/两种情况:
+     *              1)/books/findBookList: / 即为项目根路径(/ + 项目名)
+     *              2)findBookList: 从当前路径下发起请求,即/store/findBookList
+     *              3)也可以拼接绝对路径:
+     *    return "redirect:" + (scheme + "://" + name + ":" + port + contextPath + "/pages/login.jsp");
+     */
 }
