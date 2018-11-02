@@ -23,6 +23,7 @@
         <maven.compiler.target>1.8</maven.compiler.target>
         <spring-version>5.0.2.RELEASE</spring-version>
         <mybatis-version>3.4.5</mybatis-version>
+        <spring.security.version>5.0.1.RELEASE</spring.security.version>
     </properties>
 
     <dependencies>
@@ -169,6 +170,23 @@
             <groupId>org.aspectj</groupId>
             <artifactId>aspectjweaver</artifactId>
             <version>1.8.7</version>
+        </dependency>
+
+        <!-- 5. 安全框架 -->
+        <dependency>
+            <groupId>org.springframework.security</groupId>
+            <artifactId>spring-security-web</artifactId>
+            <version>${spring.security.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework.security</groupId>
+            <artifactId>spring-security-config</artifactId>
+            <version>${spring.security.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework.security</groupId>
+            <artifactId>spring-security-taglibs</artifactId>
+            <version>${spring.security.version}</version>
         </dependency>
     </dependencies>
 </project>

@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:security="http://www.springframework.org/schema/security"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+    http://www.springframework.org/schema/beans/spring-beans.xsd
+    http://www.springframework.org/schema/security
+    http://www.springframework.org/schema/security/spring-security.xsd">
+
+    <!-- 不拦截静态资源 -->
+    <security:http pattern="/css/**" security="none"/>
+    <security:http pattern="/img/**" security="none"/>
+    <security:http pattern="/plugins/**" security="none"/>
+    <!-- 谷歌浏览器:请求被拦截自动访问favicon.ico -->
+    <security:http pattern="/favicon.ico" security="none"/>
+
+    <!-- 把登陆页面不拦截 -->
+    <security:http pattern="/login.jsp" security="none"/>
+    <security:http pattern="/failer.jsp" security="none"/>
+    <security:http pattern="/403.jsp" security="none"/>
+    <security:http pattern="/404.jsp" security="none"/>
+    <security:http pattern="/500.jsp" security="none"/>
+
+    <!--
+        配置拦截的规则
+        auto-config="使用自带的页面"
+        use-expressions="是否使用spel表达式"，如果使用表达式：hasRole('ROLE_USER')
+    -->
+    <security:http auto-config="true" use-expressions="false">
+        <!-- 配置拦截的请求地址，任何请求地址都必须有ROLE_USER的权限 -->
+        <security:intercept-url pattern="/**" access="ROLE_USER"/>
+        <!-- 配置具体的页面跳转 -->
+        <security:form-login
+                login-page="/login.jsp"
+                login-processing-url="/login"
+                default-target-url="/index.jsp"
+                authentication-failure-url="/login.jsp"
+        />
+
+        <!-- 关闭跨域请求 -->
+        <security:csrf disabled="true"/>
+
+        <!-- 退出 -->
+        <security:logout invalidate-session="true" logout-url="/logout" logout-success-url="/login.jsp"/>
+
+    </security:http>
+
+    <!-- 在内存中临时提供用户名和密码的数据 -->
+    <security:authentication-manager>
+        <security:authentication-provider user-service-ref="userServiceImpl">
+           <!-- <security:user-service>
+                <security:user name="admin" password="{noop}admin" authorities="ROLE_USER"/>
+            </security:user-service>-->
+        </security:authentication-provider>
+    </security:authentication-manager>
+
+</beans>
