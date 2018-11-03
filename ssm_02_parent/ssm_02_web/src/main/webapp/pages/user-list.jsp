@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
@@ -84,7 +85,7 @@
 				<li><a href="${pageContext.request.contextPath}/index.jsp"><i
 						class="fa fa-dashboard"></i> 首页</a></li>
 				<li><a
-					href="${pageContext.request.contextPath}/user/findAll.do">用户管理</a></li>
+					href="${pageContext.request.contextPath}/user/findAll">用户管理</a></li>
 
 				<li class="active">全部用户</li>
 			</ol>
@@ -144,14 +145,14 @@
 								</thead>
 								<tbody>
 
-									<c:forEach items="${userlist}" var="user">
+									<c:forEach items="${userList}" var="user">
 										<tr>
 											<td><input name="ids" type="checkbox"></td>
-											<td>${user.id }</td>
-											<td>${user.username }</td>
-											<td>${user.email }</td>
-											<td>${user.phoneNum }</td>
-											<td>${user.statusStr }</td>											
+											<td>${user.id}</td>
+											<td>${user.username}</td>
+											<td>${user.email}</td>
+											<td>${user.phoneNum}</td>
+											<td>${user.status}</td>
 											<td class="text-center">
 												<a href="${pageContext.request.contextPath}/pages/user-show.jsp" class="btn bg-olive btn-xs">详情</a>
 												<a href="${pageContext.request.contextPath}/pages/user-role-add.jsp" class="btn bg-olive btn-xs">添加角色</a>

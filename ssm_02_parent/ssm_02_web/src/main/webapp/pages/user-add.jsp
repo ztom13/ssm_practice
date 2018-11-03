@@ -85,13 +85,13 @@
 				<li><a href="${pageContext.request.contextPath}/index.jsp"><i
 						class="fa fa-dashboard"></i> 首页</a></li>
 				<li><a
-					href="${pageContext.request.contextPath}/user/findAll.do">用户管理</a></li>
+					href="${pageContext.request.contextPath}/user/findAll">用户管理</a></li>
 				<li class="active">用户表单</li>
 			</ol>
 			</section>
 			<!-- 内容头部 /-->
 
-			<form action="${pageContext.request.contextPath}/user/save.do"
+			<form action="${pageContext.request.contextPath}/user/save"
 				method="post">
 				<!-- 正文区域 -->
 				<section class="content"> <!--产品信息-->
@@ -103,7 +103,7 @@
 						<div class="col-md-2 title">用户名称</div>
 						<div class="col-md-4 data">
 							<input type="text" class="form-control" name="username"
-								placeholder="用户名称" value="">
+								placeholder="用户名称" value="" id="username" onchange="isExist()">
 						</div>
 						<div class="col-md-2 title">密码</div>
 						<div class="col-md-4 data">
@@ -133,7 +133,7 @@
 				</div>
 				<!--订单信息/--> <!--工具栏-->
 				<div class="box-tools text-center">
-					<button type="submit" class="btn bg-maroon">保存</button>
+					<button id="saveBtn" type="submit" class="btn bg-maroon">保存</button>
 					<button type="button" class="btn bg-default"
 						onclick="history.back(-1);">返回</button>
 				</div>
@@ -163,6 +163,30 @@
 	<script>
 		$.widget.bridge('uibutton', $.ui.button);
 	</script>
+
+	<script type="text/javascript">
+		function isExist() {
+		    var username = $("#username").val();
+			$.ajax({
+				url:"${pageContext.request.contextPath}/user/isExist",
+				data:"username="+username,
+				type:"post",
+				success:function (data) {
+					if(data == "false"){
+					    // 可以使用
+						$("#username").attr("style","none");
+						$("#username").addClass("form-control");
+						$("#saveBtn").attr("disabled",false);
+                    }else {
+					    // 用户名已存在
+						$("#username").attr("style","border:1px solid red");
+						$("#saveBtn").attr("disabled",true);
+                    }
+                }
+			})
+        }
+	</script>
+
 	<script
 		src="${pageContext.request.contextPath}/plugins/bootstrap/js/bootstrap.min.js"></script>
 	<script
