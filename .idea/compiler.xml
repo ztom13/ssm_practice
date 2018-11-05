@@ -10,15 +10,17 @@
         <module name="maven_service" />
         <module name="maven_web" />
         <module name="ojdbc_demo" />
-        <module name="schoolflowers" />
         <module name="ssm_01_library" />
         <module name="ssm_02_dao" />
         <module name="ssm_02_domain" />
         <module name="ssm_02_service" />
         <module name="ssm_02_util" />
         <module name="ssm_02_web" />
-        <module name="webmagic_1_demo" />
       </profile>
     </annotationProcessing>
+    <bytecodeTargetLevel>
+      <module name="schoolflowers" target="1.8" />
+      <module name="webmagic_1_demo" target="1.8" />
+    </bytecodeTargetLevel>
   </component>
 </project>

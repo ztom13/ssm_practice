@@ -12,10 +12,8 @@
       <list>
         <option value="$PROJECT_DIR$/ssm_01_library/pom.xml" />
         <option value="$PROJECT_DIR$/ojdbc_demo/pom.xml" />
-        <option value="$PROJECT_DIR$/webmagic_1_demo/pom.xml" />
         <option value="$PROJECT_DIR$/maven_parent/pom.xml" />
         <option value="$PROJECT_DIR$/ssm_02_parent/pom.xml" />
-        <option value="$PROJECT_DIR$/schoolflowers/pom.xml" />
       </list>
     </option>
   </component>
