@@ -1,11 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <beans xmlns="http://www.springframework.org/schema/beans"
        xmlns:security="http://www.springframework.org/schema/security"
+       xmlns:aop="http://www.springframework.org/schema/aop"
        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
        xsi:schemaLocation="http://www.springframework.org/schema/beans
     http://www.springframework.org/schema/beans/spring-beans.xsd
     http://www.springframework.org/schema/security
-    http://www.springframework.org/schema/security/spring-security.xsd">
+    http://www.springframework.org/schema/security/spring-security.xsd
+    http://www.springframework.org/schema/aop
+    http://www.springframework.org/schema/aop/spring-aop.xsd">
 
     <!-- 不拦截静态资源 -->
     <security:http pattern="/css/**" security="none"/>
@@ -26,9 +29,9 @@
         auto-config="使用自带的页面"
         use-expressions="是否使用spel表达式"，如果使用表达式为：hasRole('ROLE_USER')
     -->
-    <security:http auto-config="true" use-expressions="false">
+    <security:http auto-config="true" use-expressions="true">
         <!-- 配置拦截的请求地址，任何请求地址都必须有ROLE_USER的权限 -->
-        <security:intercept-url pattern="/**" access="ROLE_USER"/>
+        <security:intercept-url pattern="/**" access="hasAnyRole('ROLE_USER','ROLE_ADMIN')"/>
         <!-- 配置具体的页面跳转 -->
         <security:form-login
                 login-page="/login.jsp"
@@ -61,4 +64,10 @@
     <!-- 配置加密类 -->
     <bean id="passwordEncoder" class="org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder"/>
 
+    <!--aop的自动代理
+    其中proxy-target-class设置为true代表目标类的代理对象不需要借助于接口
+    即使用cglib基于子类生成目标对象的代理对象
+    -->
+    <aop:aspectj-autoproxy proxy-target-class="true"></aop:aspectj-autoproxy>
+    <security:global-method-security secured-annotations="enabled"/>
 </beans>

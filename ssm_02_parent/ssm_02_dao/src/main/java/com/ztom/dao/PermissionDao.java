@@ -39,4 +39,13 @@ public interface PermissionDao {
             statement = "select permission_seq.nextval from dual")
     @Insert("insert into sys_permission values(#{id},#{permissionName},#{url},#{pid})")
     void save(Permission permission);
+
+    /**
+     * 根据role的id查询权限
+     * @param id
+     * @return
+     */
+    @Select("select p.* from sys_permission p,sys_role_permission rp " +
+            "where p.id=rp.roleId and rp.roleId=#{id}")
+    List<Permission> findByRid(Integer id);
 }

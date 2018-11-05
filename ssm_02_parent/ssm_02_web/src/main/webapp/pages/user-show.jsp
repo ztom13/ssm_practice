@@ -1,3 +1,4 @@
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
@@ -84,7 +85,7 @@
 				<li><a href="${pageContext.request.contextPath}/index.jsp"><i
 						class="fa fa-dashboard"></i> 首页</a></li>
 				<li><a
-					href="${pageContext.request.contextPath}/user/findAll.do">用户管理</a></li>
+					href="${pageContext.request.contextPath}/user/findAll">用户管理</a></li>
 
 				<li class="active">全部用户</li>
 			</ol>
@@ -107,11 +108,11 @@
 						<div class="pull-left">
 							<div class="form-group form-inline">
 								<div class="btn-group">
-									<button type="button" class="btn btn-default" title="新建">
+									<button type="button" class="btn btn-default" title="新建" onclick="location.href='${pageContext.request.contextPath}/pages/user-add.jsp'">
 										<i class="fa fa-file-o"></i> 新建
 									</button>
 
-									<button type="button" class="btn btn-default" title="刷新">
+									<button type="button" class="btn btn-default" title="刷新" onclick="location.reload()">
 										<i class="fa fa-refresh"></i> 刷新
 									</button>
 								</div>
@@ -142,17 +143,16 @@
 								</tr>
 
 								<tbody>
-									<c:forEach items="${user.roles}" var="role">
-										<tr data-tt-id="1" data-tt-parent-id="0">
+									<c:forEach items="${user.roleList}" var="role">
+										<tr data-tt-id="${role.id}" data-tt-parent-id="0">
 											<td>${role.roleName }</td>
 											<td>${role.roleDesc }</td>
 										</tr>
-										<c:forEach items="${role.permissions}" var="permission">
-											<tr data-tt-id="1-1" data-tt-parent-id="1">
+										<c:forEach items="${role.permissionList}" var="permission">
+											<tr data-tt-id="${role.id}-${permission.id}" data-tt-parent-id="${role.id}">
 												<td>${permission.permissionName}</td>
 												<td>${permission.url}</td>
 											</tr>
-
 										</c:forEach>
 									</c:forEach>
 								</tbody>

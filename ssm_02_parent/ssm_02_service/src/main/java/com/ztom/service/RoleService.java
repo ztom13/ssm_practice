@@ -20,4 +20,18 @@ public interface RoleService {
      * @param role
      */
     void save(Role role);
+
+    /**
+     * 根据id查询角色
+     * @param id
+     * @return
+     */
+    Role findById(Integer id);
+
+    /**
+     * 给角色添加/删除权限
+     * @param roleId
+     * @param ids
+     */
+    void addPermission(Integer roleId, Integer[] ids);
 }

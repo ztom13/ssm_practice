@@ -28,4 +28,18 @@ public interface UserService extends UserDetailsService {
      * @return
      */
     Boolean isExist(String username);
+
+    /**
+     * 根据id查询用户
+     * @param id
+     * @return
+     */
+    SysUser findById(Integer id);
+
+    /**
+     * 给用户添加/删除角色
+     * @param userId
+     * @param ids
+     */
+    void addRole(Integer userId, Integer[] ids);
 }

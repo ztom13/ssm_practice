@@ -112,7 +112,7 @@
 											<i class="fa fa-file-o"></i> 新建
 										</button>
 										
-										<button type="button" class="btn btn-default" title="刷新">
+										<button type="button" class="btn btn-default" title="刷新" onclick="location.reload()">
 											<i class="fa fa-refresh"></i> 刷新
 										</button>
 									</div>
@@ -154,8 +154,8 @@
 											<td>${user.phoneNum}</td>
 											<td>${user.status}</td>
 											<td class="text-center">
-												<a href="${pageContext.request.contextPath}/pages/user-show.jsp" class="btn bg-olive btn-xs">详情</a>
-												<a href="${pageContext.request.contextPath}/pages/user-role-add.jsp" class="btn bg-olive btn-xs">添加角色</a>
+												<a href="${pageContext.request.contextPath}/user/details?id=${user.id}" class="btn bg-olive btn-xs">详情</a>
+												<a href="${pageContext.request.contextPath}/user/addRoleUI?id=${user.id}" class="btn bg-olive btn-xs">添加角色</a>
 											</td>
 										</tr>
 									</c:forEach>

@@ -1,22 +1,40 @@
 package com.ztom.domain;
 
+import java.util.List;
+
 /**
  * author:ztom
  * date:2018/11/2 11:23
  */
 public class SysUser {
-    private Long id;
+    private Integer id;
+
     private String username;
+
     private String email;
+
     private String password;
+
     private String phoneNum;
+
     private int status;
 
-    public Long getId() {
+    // 一个用户拥有哪些角色
+    private List<Role> roleList;
+
+    public List<Role> getRoleList() {
+        return roleList;
+    }
+
+    public void setRoleList(List<Role> roleList) {
+        this.roleList = roleList;
+    }
+
+    public Integer getId() {
         return id;
     }
 
-    public void setId(Long id) {
+    public void setId(Integer id) {
         this.id = id;
     }
 

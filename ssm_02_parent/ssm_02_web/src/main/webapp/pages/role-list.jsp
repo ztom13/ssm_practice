@@ -150,7 +150,7 @@
 											<td>${role.roleName}</td>
 											<td>${role.roleDesc}</td>
 											<td class="text-center">
-												<a href="${pageContext.request.contextPath}/pages/role-permission-add.jsp" class="btn bg-olive btn-xs">添加权限</a>
+												<a href="${pageContext.request.contextPath}/role/addPermissionUI?id=${role.id}" class="btn bg-olive btn-xs">添加权限</a>
 											</td>
 										</tr>
 									</c:forEach>

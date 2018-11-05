@@ -26,4 +26,19 @@ public class RoleServiceImpl implements RoleService {
     public void save(Role role) {
         roleDao.save(role);
     }
+
+    @Override
+    public Role findById(Integer id) {
+        return roleDao.findById(id);
+    }
+
+    @Override
+    public void addPermission(Integer roleId, Integer[] ids) {
+        roleDao.deletePermission(roleId);
+        if(ids!=null&&ids.length>0){
+            for (Integer id : ids) {
+                roleDao.addPermission(roleId,id);
+            }
+        }
+    }
 }
